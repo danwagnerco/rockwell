@@ -19,7 +19,7 @@ def test_watch_site_acceptable_redirect():
     assert watch(url) == 302
 
 
-@freeze_time("2015-10-31 13:00:00")
+@freeze_time("2015-10-31 13:00:00", tz_offset=4)
 def test_judge_site_ok():
     status_code = 200
 
@@ -27,7 +27,7 @@ def test_judge_site_ok():
                                   "timestamp": "2015-10-31 13:00"}
 
 
-@freeze_time("2015-10-31 13:00:00")
+@freeze_time("2015-10-31 13:00:00", tz_offset=4)
 def test_judge_site_acceptable_redirect():
     status_code = 302
 
@@ -35,7 +35,7 @@ def test_judge_site_acceptable_redirect():
                                   "timestamp": "2015-10-31 13:00"}
 
 
-@freeze_time("2015-10-31 13:00:00")
+@freeze_time("2015-10-31 13:00:00", tz_offset=4)
 def test_judge_site_down():
     status_codes = (i for i in range(400, 600))
     for status_code in status_codes:
