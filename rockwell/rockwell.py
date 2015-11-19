@@ -1,9 +1,12 @@
 import requests
 from datetime import datetime
+from fake_useragent import UserAgent
 
+ua = UserAgent()
+HEADERS = {"User-Agent": ua.chrome}
 
 def watch(url):
-   return requests.get(url).status_code
+   return requests.get(url, headers=HEADERS).status_code
 
 
 def judge(status_code):
