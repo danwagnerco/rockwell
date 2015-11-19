@@ -8,7 +8,9 @@ setup(
    author = "Dan Wagner",
    author_email = "danwagnerco@gmail.com",
    url = "https://github.com/danwagnerco/rockwell",
-   install_requires = ["requests>=2.7.0", "fake-useragent>=0.0.8", "pytz>=2015.7"]
+   install_requires = ["requests>=2.7.0",
+                       "fake-useragent>=0.0.8",
+                       "pytz>=2015.7"],
    classifiers = [
        "Development Status :: 3 - Alpha",
        "Environment :: Console",
