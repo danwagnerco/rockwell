@@ -13,7 +13,7 @@ def watch(url):
 def judge(status_code):
    eastern = timezone("US/Eastern")
    now = datetime.now(eastern).strftime("%Y-%m-%d %H:%M")
-   if status_code in (200, 302):
+   if status_code in (200, 301, 302):
       return {"status": "up", "timestamp": now}
    else:
       return {"status": "down", "timestamp": now}

@@ -24,7 +24,7 @@ def test_judge_site_ok():
     status_code = 200
 
     assert judge(status_code) == {"status": "up",
-                                  "timestamp": "2015-10-31 13:00"}
+                                  "timestamp": "2015-10-31 17:00"}
 
 
 @freeze_time("2015-10-31 13:00:00", tz_offset=4)
@@ -32,7 +32,7 @@ def test_judge_site_acceptable_redirect():
     status_code = 302
 
     assert judge(status_code) == {"status": "up",
-                                  "timestamp": "2015-10-31 13:00"}
+                                  "timestamp": "2015-10-31 17:00"}
 
 
 @freeze_time("2015-10-31 13:00:00", tz_offset=4)
@@ -40,5 +40,5 @@ def test_judge_site_down():
     status_codes = (i for i in range(400, 600))
     for status_code in status_codes:
         assert judge(status_code) == {"status": "down",
-                                      "timestamp": "2015-10-31 13:00"}
+                                      "timestamp": "2015-10-31 17:00"}
 
